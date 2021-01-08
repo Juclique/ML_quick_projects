@@ -1,1 +1,7 @@
+This is an example of COVID detecion via radiography images using transfer learning.
 
+The architecture used is GoogLeNet.
+
+The dataset is COVID-19 Open Research Dataset Challenge (CORD-19) (https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)
+
+The global accuracy is 99.8% and the False Negative rate for COVID is 0%
