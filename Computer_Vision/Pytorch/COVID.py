@@ -121,10 +121,11 @@ class COVID_NN:
             output = [x.argmax() for x in output]
             return self.model_gn(output.to(device))
 
-
+#Training
 nn = COVID_NN(64)
 nn.train(20)
 
+#Global accuracy
 num = 0
 for i in nn.predictions:
     if i[0] == i[1]:
@@ -132,18 +133,10 @@ for i in nn.predictions:
 
 num / len(nn.predictions)
 
+#False Negative rate
 FN = 0
 for i in nn.predictions:
     if i[0] != 0 and i[1] == 0:
-        FN += 1
-
-FN / len(nn.predictions)
-
-
-FN = 0
-for i in nn.predictions:
-    if i[1] != i[0]:
-        print(i)
         FN += 1
 
 FN / len(nn.predictions)
